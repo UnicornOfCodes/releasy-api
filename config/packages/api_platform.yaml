@@ -1,0 +1,11 @@
+api_platform:
+    mapping:
+        #for yaml
+        paths: [ '%kernel.project_dir%/config/api_platform/resources' ]
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        api_keys:
+            apiKey:
+                name: Authorization
+                type: header

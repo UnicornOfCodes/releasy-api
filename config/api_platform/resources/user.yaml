@@ -1,0 +1,5 @@
+App\Entity\User:
+    collectionOperations:
+        register:
+            method: POST
+            input: App\Dto\CreateUser
