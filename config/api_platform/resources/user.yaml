@@ -3,3 +3,4 @@ App\Entity\User:
         register:
             method: POST
             input: App\Dto\CreateUser
+    

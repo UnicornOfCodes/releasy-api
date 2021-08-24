@@ -1,0 +1,6 @@
+App\Entity\User:
+    attributes:
+        email: 
+          groups: ['user:item:get', 'user:collection:post', 'user:collection:get']
+        password:
+          groups: ['user:collection:post']
