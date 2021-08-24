@@ -1,0 +1,8 @@
+App\Entity\Project:
+    attributes:
+        id:
+          groups: ['user:item:get', 'project:item:get', 'project:item:collection']
+        name: 
+          groups: ['user:item:get', 'project:item:get', 'project:item:collection', 'project:collection:post', 'project:collection:put']
+        users:
+          groups: ['project:collection:post', 'project:collection:put']
