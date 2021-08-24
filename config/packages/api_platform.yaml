@@ -1,4 +1,10 @@
 api_platform:
+    title: "Api for Releasy App"
+    
+    description: "Documentation for Api"
+    
+    version: "0.0.1"
+    
     mapping:
         #for yaml
         paths: [ '%kernel.project_dir%/config/api_platform/resources' ]
