@@ -35,3 +35,11 @@ services:
         tags:
             - { name: api_platform.doctrine.orm.query_extension.collection }
             - { name: api_platform.doctrine.orm.query_extension.item }
+    
+    'project.git_filter':
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { project : 'exact' } ]
+        tags:  [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false

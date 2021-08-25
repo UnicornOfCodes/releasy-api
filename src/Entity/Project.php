@@ -30,9 +30,15 @@ class Project
      */
     private $users;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Git::class, mappedBy="project", orphanRemoval=true)
+     */
+    private $gits;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->gits = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -72,6 +78,36 @@ class Project
     public function removeUser(User $user): self
     {
         $this->users->removeElement($user);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Git[]
+     */
+    public function getGits(): Collection
+    {
+        return $this->gits;
+    }
+
+    public function addGit(Git $git): self
+    {
+        if (!$this->gits->contains($git)) {
+            $this->gits[] = $git;
+            $git->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGit(Git $git): self
+    {
+        if ($this->gits->removeElement($git)) {
+            // set the owning side to null (unless already changed)
+            if ($git->getProject() === $this) {
+                $git->setProject(null);
+            }
+        }
 
         return $this;
     }
