@@ -1,6 +1,25 @@
 App\Entity\User:
     collectionOperations:
+        post:
+            normalization_context:
+                groups: ['user:item:get']
+            denormalization_context:
+                groups: ['user:collection:post']
         register:
             method: POST
             input: App\Dto\CreateUser
-    
+
+    itemOperations:
+        get:
+            normalization_context:
+                groups: ['user:item:get']
+        put:
+            normalization_context:
+                groups: ['user:item:get']
+            denormalization_context:
+                groups: ['user:item:put']
+            security:
+                'is_granted("ROLE_ADMIN") or object == user'
+        modify:
+            method: PUT
+            input: App\Dto\ModifyUser
