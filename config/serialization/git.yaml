@@ -1,22 +1,22 @@
 App\Entity\Git:
     attributes:
         id:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
         name:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
         repositoryName:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
         baseUrl:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
         provider:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
         lastScanAt:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
         members:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
         branch:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
         fullUrl:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
         lastPipelineStatus:
-          groups: ['project:item:get', 'git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get']
