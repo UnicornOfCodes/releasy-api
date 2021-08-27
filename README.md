@@ -1,5 +1,7 @@
 Releasy-App is an Open Source Maintenance platform.
 
+[![SymfonyInsight](https://insight.symfony.com/projects/c42b623e-cb1d-4b43-9a20-74d365f86661/big.svg)](https://insight.symfony.com/projects/c42b623e-cb1d-4b43-9a20-74d365f86661)
+
 ⚙️ Installation
 --------------
 
