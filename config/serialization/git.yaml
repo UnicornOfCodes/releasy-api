@@ -3,19 +3,19 @@ App\Entity\Git:
         id:
           groups: ['git:item:get', 'git:collection:get']
         name:
-          groups: ['git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get', 'git:collection:post', 'git:item:put']
         repositoryName:
-          groups: ['git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get', 'git:collection:post', 'git:item:put']
         baseUrl:
-          groups: ['git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get', 'git:collection:post', 'git:item:put']
         provider:
-          groups: ['git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get', 'git:collection:post', 'git:item:put']
         lastScanAt:
           groups: ['git:item:get', 'git:collection:get']
         members:
           groups: ['git:item:get', 'git:collection:get']
         branch:
-          groups: ['git:item:get', 'git:collection:get']
+          groups: ['git:item:get', 'git:collection:get', 'git:collection:post', 'git:item:put']
         fullUrl:
           groups: ['git:item:get', 'git:collection:get']
         lastPipelineStatus:
