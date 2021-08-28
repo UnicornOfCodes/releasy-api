@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GitRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -77,6 +79,16 @@ class Git
      * @ORM\Column(type="array", nullable=true)
      */
     private $lastPipelineStatus = [];
+
+    /**
+     * @ORM\OneToMany(targetEntity=Package::class, mappedBy="git", orphanRemoval=true)
+     */
+    private $packages;
+
+    public function __construct()
+    {
+        $this->packages = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -223,6 +235,36 @@ class Git
     public function setLastPipelineStatus(?array $lastPipelineStatus): self
     {
         $this->lastPipelineStatus = $lastPipelineStatus;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Package[]
+     */
+    public function getPackages(): Collection
+    {
+        return $this->packages;
+    }
+
+    public function addPackage(Package $package): self
+    {
+        if (!$this->packages->contains($package)) {
+            $this->packages[] = $package;
+            $package->setGit($this);
+        }
+
+        return $this;
+    }
+
+    public function removePackage(Package $package): self
+    {
+        if ($this->packages->removeElement($package)) {
+            // set the owning side to null (unless already changed)
+            if ($package->getGit() === $this) {
+                $package->setGit(null);
+            }
+        }
 
         return $this;
     }

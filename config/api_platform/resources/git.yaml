@@ -2,5 +2,15 @@ App\Entity\Git:
     collectionOperations:
         get: 
             filters: ['project.git_filter']
-        post: ~
-    itemOperations: ~
+        post:
+            normalization_context:
+                groups: ['git:item:get']
+            denormalization_context:
+                groups: ['git:collection:post']
+    itemOperations:
+        put:
+            normalization_context:
+                groups: ['git:item:get']
+            denormalization_context:
+                groups: ['git:item:put']
+        delete: ~
