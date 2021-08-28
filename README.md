@@ -13,18 +13,22 @@ Requirement (you can use this command "composer check" for verify):
 
 For install dependencies : 
 
-    composer install
+    $ composer install
 
 You need to create your .env.local with .env and modify with your parameters.
 
-For create a database and install migrations :
+To create a database and install migrations :
 
-    php bin/console doctrine:database:create
-    php bin/console doctrine:migrations:migrate
+    $ php bin/console doctrine:database:create
+    $ php bin/console doctrine:migrations:migrate
 
-After that, you can use this command for run this Api : 
+To generate SSL keys for JWT Token :
 
-    symfony serve
+    $ php bin/console lexik:jwt:generate-keypair
+
+After that, you can use this command to run this Api : 
+
+    $ symfony serve
 
 You can access to Swagger Api from this link : http://localhost:8000/api.
 
