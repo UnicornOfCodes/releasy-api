@@ -4,6 +4,7 @@ namespace App\Service\Git;
 
 use Symfony\Component\HttpClient\HttpClient;
 use App\Entity\Git;
+use App\Entity\Package;
 use Symfony\Component\HttpFoundation\Response;
 
 class GitlabService
