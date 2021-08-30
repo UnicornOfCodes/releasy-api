@@ -1,3 +1,11 @@
 App\Entity\Project:
-    collectionOperations: ~
+    collectionOperations:
+        get:
+            normalization_context:
+                groups: ['project:collection:get']
+        post:
+            normalization_context:
+                groups: ['project:item:get']
+            denormalization_context:
+                groups: ['project:collection:post']
     itemOperations: ~

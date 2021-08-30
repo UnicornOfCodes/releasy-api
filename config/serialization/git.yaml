@@ -15,7 +15,7 @@ App\Entity\Git:
         members:
           groups: ['git:item:get', 'git:collection:get']
         branch:
-          groups: ['git:item:get', 'git:collection:get', 'git:collection:post', 'git:item:put']
+          groups: ['git:item:get', 'git:collection:get', 'git:item:put']
         fullUrl:
           groups: ['git:item:get', 'git:collection:get']
         lastPipelineStatus:
