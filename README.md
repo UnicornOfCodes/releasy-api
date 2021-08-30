@@ -24,6 +24,7 @@ To create a database and install migrations :
 
 To generate SSL keys for JWT Token :
 
+    $ mkdir config/jwt
     $ php bin/console lexik:jwt:generate-keypair
 
 After that, you can use this command to run this Api : 
