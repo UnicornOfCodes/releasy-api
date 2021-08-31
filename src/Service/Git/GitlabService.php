@@ -42,7 +42,7 @@ class GitlabService
         $response = $this->httpClient->request('GET', $this->baseApi . "projects?search=". $git->getRepositoryName());
         if ($response->getStatusCode() == Response::HTTP_OK) {
             $content = json_decode($response->getContent(), true);
-            dd($content);
+            
             $git->setApiId($content[0]['id']);
             $git->setFullUrl($content[0]['web_url']);
         }
@@ -67,7 +67,6 @@ class GitlabService
             $content = json_decode($response->getContent(), true);
             return base64_decode($content['content']);
         }
-
         return false;
     }
 

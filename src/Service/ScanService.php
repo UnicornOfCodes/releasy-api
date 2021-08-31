@@ -9,11 +9,17 @@ use App\Service\Package\ComposerService;
 
 class ScanService
 {
+
+
     public function scan(Package $package)
     {
         $providerService = $this->getProviderService($package->getGit()->getProvider()); 
         $information = $providerService->getPackageInfo($package);
-        
+
+        $packageService = $this->getPackageService($package->getType());
+
+        $packageService->check($package, $information);
+
         return true;
     }
 
