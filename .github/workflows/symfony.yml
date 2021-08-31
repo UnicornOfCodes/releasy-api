@@ -15,10 +15,12 @@ jobs:
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Directory Permissions
-      run: chmod -R 777 var
+      run: pwd
     - name: Create Database
-      run: touch var/data.db
+      run: |
+        mkdir data
+        touch data/database.sqlite
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
-        DATABASE_URL: sqlite:///%kernel.project_dir%/var/data.db
+        DATABASE_URL: sqlite:///%kernel.project_dir%/data/database.sqlite
       run: vendor/bin/phpunit
