@@ -39,10 +39,10 @@ class GitlabService
         $this->initHeader($git->getAccessToken());
         $this->setBaseApi($git->getBaseUrl());
 
-        $response = $this->httpClient->request('GET', $this->baseUrl . "projects?search=". $git->getRepositoryName());
+        $response = $this->httpClient->request('GET', $this->baseApi . "projects?search=". $git->getRepositoryName());
         if ($response->getStatusCode() == Response::HTTP_OK) {
             $content = json_decode($response->getContent(), true);
-
+            
             $git->setApiId($content[0]['id']);
             $git->setFullUrl($content[0]['web_url']);
         }
@@ -62,12 +62,11 @@ class GitlabService
         $this->initHeader($git->getAccessToken());
         $this->setBaseApi($git->getBaseUrl());
 
-        $response = $this->httpClient->request('GET', $this->baseUrl . "projects/" . $git->getApiId() . "/repository/files/". urlencode($package->getPath()) . "?ref=" . $git->getBranch());
+        $response = $this->httpClient->request('GET', $this->baseApi . "projects/" . $git->getApiId() . "/repository/files/". urlencode($package->getPath()) . "?ref=" . $git->getBranch());
         if ($response->getStatusCode() == Response::HTTP_OK) {
             $content = json_decode($response->getContent(), true);
             return base64_decode($content['content']);
         }
-
         return false;
     }
 
