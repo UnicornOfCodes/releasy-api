@@ -65,7 +65,6 @@ class GitlabService
         $response = $this->httpClient->request('GET', $this->baseApi . "projects/" . $git->getApiId() . "/repository/files/". urlencode($package->getPath()) . "?ref=" . $git->getBranch());
         if ($response->getStatusCode() == Response::HTTP_OK) {
             $content = json_decode($response->getContent(), true);
-            dd(base64_decode($content['content']));
             return base64_decode($content['content']);
         }
 
