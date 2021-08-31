@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Git
 {
+    const PROVIDER_GITLAB = "gitlab";
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
