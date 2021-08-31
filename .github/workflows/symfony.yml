@@ -14,11 +14,9 @@ jobs:
       run: php -r "file_exists('.env.test.local') || copy('.env.test', '.env.test.local');"
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-    - name: Directory Permissions
-      run: pwd
     - name: Create Database
       run: |
-        mkdir data
+        mkdir -p data
         touch data/database.sqlite
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
