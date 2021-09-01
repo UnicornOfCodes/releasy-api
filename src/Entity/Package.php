@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Package
 {
     const TYPE_COMPOSER = "composer";
-    const TYPE_PACKAGE  = "package";
+    const TYPE_NPM      = "npm";
     const TYPE_YARN     = "yarn";
 
     /**

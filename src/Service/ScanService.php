@@ -6,11 +6,10 @@ use App\Entity\Git;
 use App\Entity\Package;
 use App\Service\Git\GitlabService;
 use App\Service\Package\ComposerService;
+use App\Service\Package\NpmService;
 
 class ScanService
 {
-
-
     public function scan(Package $package)
     {
         $providerService = $this->getProviderService($package->getGit()->getProvider()); 
@@ -29,6 +28,8 @@ class ScanService
         {
             case Package::TYPE_COMPOSER: 
                 return new ComposerService();
+            case Package::TYPE_NPM: 
+                return new NpmService();
         }
     }
 
