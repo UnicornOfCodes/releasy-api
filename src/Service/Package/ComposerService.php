@@ -61,4 +61,20 @@ class ComposerService
         $package->setSecurity($packageSecurityAudit);
     }
 
+    /**
+     * @return mixed
+     */
+    public function getAlert(): array
+    {
+        return $this->alert;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSecurityUpdates(): array
+    {
+        return $this->securityUpdates;
+    }
+
 }
