@@ -1,5 +1,6 @@
 Releasy-App is an Open Source Maintenance platform.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d1cc65f18af34f68a01645226fccd518)](https://app.codacy.com/gh/UnicornOfCodes/releasy-api?utm_source=github.com&utm_medium=referral&utm_content=UnicornOfCodes/releasy-api&utm_campaign=Badge_Grade_Settings)
 [![SymfonyInsight](https://insight.symfony.com/projects/c42b623e-cb1d-4b43-9a20-74d365f86661/big.svg)](https://insight.symfony.com/projects/c42b623e-cb1d-4b43-9a20-74d365f86661)
 
 ⚙️ Installation
