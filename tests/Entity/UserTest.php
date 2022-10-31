@@ -9,7 +9,7 @@ class UserTest extends TestCase
 {
     const USER_EMAIL = "test@test.fr";
 
-    public function testName()
+    public function testEmail()
     {
         $user = $this->init();
         $user->setEmail(self::USER_EMAIL);
